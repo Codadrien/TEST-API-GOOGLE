@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(dir)",
+      "Bash(copy EXEMPLESITE.html publicEXEMPLESITE.html)",
+      "Bash(cp:*)",
+      "Bash(npm install)",
+      "Bash(node:*)",
+      "Bash(dir public)",
+      "Bash(npm run dev:*)",
+      "Bash(copy products-final.json publicproducts-final.json /Y)",
+      "Bash(ls:*)",
+      "Bash(rm:*)",
+      "Bash(pkill:*)",
+      "Bash(taskkill:*)"
+    ],
+    "deny": []
+  }
+}

@@ -1,0 +1,50 @@
+/* Styles additionnels pour le composant React */
+
+/* Animation de chargement */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Transitions */
+.transition {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-transform {
+  transition-property: transform;
+}
+
+.duration-500 {
+  transition-duration: 500ms;
+}
+
+/* Hover effects */
+.group:hover .group-hover\\/link\\:scale-110 {
+  transform: scale(1.1);
+}
+
+/* Assurer que les styles du site original sont préservés */
+.similar-image-card {
+  width: 100%;
+  height: auto;
+}
+
+/* Styles pour le filtre de couleur */
+.color-filter-container {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}

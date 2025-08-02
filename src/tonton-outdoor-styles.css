@@ -1,0 +1,350 @@
+/* Styles extraits du site Tonton Outdoor pour reproduire l'apparence exacte */
+
+/* Container principal */
+.TTO-products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 0.625rem;
+}
+
+/* Responsive grid */
+@media (min-width: 640px) {
+  .TTO-products-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .TTO-products-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1536px) {
+  .TTO-products-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1.25rem 0.875rem;
+  }
+}
+
+/* Carte produit */
+.TTO-product-card {
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0;
+  overflow: hidden;
+  background-color: white;
+  border: 1px solid #e5e5e5;
+}
+
+/* Pour les cartes en colonnes larges sur mobile */
+@media (max-width: 1023px) {
+  .TTO-product-card {
+    grid-column: span 1 / span 1;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .TTO-product-card:first-child {
+    grid-column: span 3 / span 3;
+  }
+}
+
+/* Badge promo */
+.TTO-promo-badge {
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 600;
+  font-size: 0.625rem;
+  background-color: #ff6b4f;
+}
+
+/* Container image */
+.TTO-image-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0 0.5rem;
+}
+
+/* Lien produit */
+.TTO-product-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+/* Image principale */
+.TTO-product-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  max-width: 8rem;
+  overflow: hidden;
+  object-fit: contain;
+  color: #6b7280;
+  font-size: 0.75rem;
+  transition: transform 500ms;
+}
+
+.TTO-product-link:hover .TTO-product-image {
+  transform: scale(1.1);
+}
+
+@media (min-width: 1280px) {
+  .TTO-product-image {
+    max-width: 11rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .TTO-product-image {
+    max-width: 184px;
+  }
+}
+
+/* Miniatures */
+.TTO-thumbnails {
+  height: 37px;
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.TTO-thumbnail {
+  flex: none;
+  width: 2.25rem;
+  height: 37px;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.TTO-thumbnail:hover {
+  border-bottom-color: #ccc;
+}
+
+.TTO-thumbnail.active {
+  border-bottom-color: #ff6b4f;
+}
+
+/* Infos produit */
+.TTO-product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0 0.5rem;
+}
+
+/* Marque */
+.TTO-brand {
+  display: block;
+  height: 1rem;
+  line-height: 1;
+  overflow: hidden;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* Nom produit */
+.TTO-name {
+  display: block;
+  height: 1.75rem;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  line-height: 14px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* Stock */
+.TTO-stock-container {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
+.TTO-stock-dot {
+  fill: #10b981;
+  width: 5px;
+  height: 5px;
+}
+
+.TTO-stock {
+  text-transform: uppercase;
+  font-size: 0.625rem;
+  font-style: italic;
+  line-height: normal;
+  padding-top: 0.125rem;
+}
+
+/* Prix */
+.TTO-price-container {
+  display: block;
+  padding-bottom: 0.5rem;
+}
+
+.TTO-price-wrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin: 0.25rem 0.625rem 0;
+}
+
+.TTO-price {
+  line-height: 1;
+  margin-top: 0.125rem;
+  font-weight: 500;
+}
+
+/* Bouton favori */
+.TTO-favorite-button {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.25rem;
+  padding: 0.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  color: #c0c0c0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 150ms;
+}
+
+.TTO-favorite-button:hover {
+  color: #ff6b4f;
+}
+
+.TTO-favorite-icon {
+  fill: currentColor;
+  width: 1rem;
+  height: 1rem;
+  transition: all 150ms;
+}
+
+/* Indicateur de couleur */
+.TTO-color-indicator {
+  height: 0.5rem;
+  width: 100%;
+}
+
+/* Panneau de filtrage */
+.TTO-filter-panel {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Boutons */
+.TTO-analyze-button,
+.TTO-reset-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  transition: all 150ms;
+  border: none;
+  cursor: pointer;
+}
+
+.TTO-analyze-button {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.TTO-analyze-button:hover {
+  background-color: #2563eb;
+}
+
+.TTO-reset-button {
+  background-color: #6b7280;
+  color: white;
+}
+
+.TTO-reset-button:hover {
+  background-color: #4b5563;
+}
+
+/* Palette de couleurs */
+.TTO-color-palette {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.TTO-all-colors {
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  border: none;
+  cursor: pointer;
+}
+
+.TTO-color-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 2px solid;
+  transition: all 150ms;
+  cursor: pointer;
+}
+
+.TTO-color-button:hover {
+  transform: scale(1.05);
+}
+
+/* Overlay de chargement */
+.TTO-loading-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+/* Textes utilitaires */
+.text-3xs {
+  font-size: 0.625rem;
+}
+
+/* Couleurs du site */
+.text-silver {
+  color: #c0c0c0;
+}
+
+.text-persimmon {
+  color: #ff6b4f;
+}
+
+.bg-persimmon {
+  background-color: #ff6b4f;
+}
+
+.text-dove-gray {
+  color: #6b7280;
+}
+
+.border-alto {
+  border-color: #e5e5e5;
+}
